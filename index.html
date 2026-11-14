@@ -597,7 +597,7 @@ var st={status:{closed:false,free:{}},book:{},names:{}},day=0,slot=null,db=null,
 var pad=function(n){return(n<10?'0':'')+n};
 function dkey(o){var d=new Date();d.setDate(d.getDate()+o);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
 function dlabel(o){var d=new Date();d.setDate(d.getDate()+o);return d.toLocaleDateString('es-CO',{weekday:'short',day:'numeric',month:'short'})}
-var SL=['09:00','09:40','10:20','11:00','11:40','13:20','14:00','14:40','15:20','16:00','16:40','17:00','17:40','18:20','19:00','19:40'];
+var SL=['09:00','09:40','10:20','11:00','11:40','13:20','14:00','14:40','15:20','16:00','16:40','17:20','18:00','18:40','19:20','20:00'];
 function lab(t){var h=+t.split(':')[0];return(h%12||12)+':'+t.split(':')[1]+(h<12?' a.m.':' p.m.')}
 function bid(o,t,b){return dkey(o)+'_'+t.replace(':','')+'_'+b}
 function free(o,t,b){if(o===0){var n=new Date(),p=t.split(':');if(+p[0]*60+ +p[1]<=n.getHours()*60+n.getMinutes())return false}return!st.book[bid(o,t,b)]}
